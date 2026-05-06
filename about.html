@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About_Tawaf</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'terminal-green': '#00FF41',
+            'terminal-dim': '#003B00',
+            'void-black': '#050505',
+            'hacker-white': '#F0F0F0',
+          },
+          fontFamily: {
+            mono: ['"Fira Code"', 'monospace'],
+            sans: ['"Jost"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #050505; color: #F0F0F0; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+    
+    #matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
+
+    body::after {
+      content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 9999; background-size: 100% 2px, 3px 100%; pointer-events: none;
+    }
+
+    .skill-tag { font-size: 0.65rem; border: 1px solid #003B00; padding: 0.2rem 0.6rem; color: #00FF41; background: rgba(0, 59, 0, 0.1); }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav class="w-full z-50 bg-void-black/80 border-b border-terminal-dim backdrop-blur-md px-8 h-16 flex items-center justify-between">
+      <div class="text-terminal-green font-bold tracking-tighter">
+        [TAWAF@NSU_CSE:~]$ <span class="animate-pulse">_</span>
+      </div>
+      <a href="index.html" class="text-[10px] text-terminal-green hover:text-white transition-colors tracking-widest uppercase font-mono">
+        << RETURN_TO_ROOT
+      </a>
+  </nav>
+
+  <!-- MAIN CONTENT SECTION -->
+  <section class="flex-grow py-24 px-8">
+    <div class="max-w-4xl mx-auto space-y-16">
+      
+      <!-- 1. BIOGRAPHY HEADER -->
+      <div class="space-y-6">
+        <h2 class="text-terminal-green text-sm tracking-widest uppercase font-mono">> DECRYPTING_BIOGRAPHY...</h2>
+        <h3 class="text-5xl md:text-6xl font-serif italic text-hacker-white leading-tight">
+          Engineering Logic. <br>
+          <span class="text-terminal-green">Designing Impact.</span>
+        </h3>
+        <p class="text-lg leading-relaxed text-gray-400 max-w-2xl">
+          I am a **Computer Science & Engineering** student at **North South University**. My work exists at the intersection of technical architecture and visual storytelling.
+        </p>
+      </div>
+
+      <!-- 2. EXPERIENCE SECTION (TOP PRIORITY) -->
+      <div class="space-y-8">
+        <h4 class="text-terminal-green text-xs tracking-widest uppercase font-mono">// DEPLOYED_EXPERIENCE</h4>
+        <div class="border-l-2 border-terminal-dim pl-6 space-y-10">
+          
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Junior Executive Member</p>
+            <p class="text-sm text-terminal-green font-mono">Young Economists' Forum (YEF) | Feb 2026 – Present</p>
+            <p class="text-sm text-gray-400 mt-2">Operating within the premier student organization of NSU, contributing to large-scale events and academic seminars.</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Volunteer</p>
+            <p class="text-sm text-terminal-green font-mono">Rishka Connects | Aug 2025 – Present</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Graphics Designer</p>
+            <p class="text-sm text-terminal-green font-mono">Sakura Powers Limited | Sep 2025 – Apr 2026</p>
+            <p class="text-sm text-gray-400 mt-2">Core visual architect responsible for industrial branding, digital identity, and marketing assets.</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Mathematics Tutor</p>
+            <p class="text-sm text-terminal-green font-mono">ARTISAN Coaching Center | Oct 2024 – Apr 2025</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Cadet</p>
+            <p class="text-sm text-terminal-green font-mono">Bangladesh National Cadet Corps (BNCC) | Feb 2023 – Sep 2024</p>
+            <p class="text-sm text-gray-400 mt-2">Trained in leadership, discipline, and disaster management drills.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. EDUCATION SECTION -->
+      <div class="space-y-8">
+        <h4 class="text-terminal-green text-xs tracking-widest uppercase font-mono">// ACADEMIC_BUILD_LOGS</h4>
+        <div class="border-l-2 border-terminal-dim pl-6 space-y-10">
+          
+          <div>
+            <p class="text-hacker-white text-xl font-bold">B.Sc. in Computer Science & Engineering</p>
+            <p class="text-sm text-gray-500">North South University | 2025 – Present</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Higher Secondary Certificate (Science)</p>
+            <p class="text-sm text-gray-500">Dhaka Residential Model College | Class of 2024</p>
+            <p class="text-md text-terminal-green font-bold mt-1">GPA: 5.00 / 5.00</p>
+          </div>
+
+          <div>
+            <p class="text-hacker-white text-xl font-bold">Secondary School Certificate (Science)</p>
+            <p class="text-sm text-gray-500">Mohammadpur Preparatory School | Class of 2022</p>
+            <p class="text-md text-terminal-green font-bold mt-1">GPA: 5.00 / 5.00</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4. SKILLS & SPECS -->
+      <div class="pt-8 border-t border-terminal-dim">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <span class="text-[10px] text-gray-500 block mb-4 tracking-widest uppercase">TECHNICAL_STACK:</span>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag text-xs px-3 py-1">Python</span>
+              <span class="skill-tag text-xs px-3 py-1">JavaScript</span>
+              <span class="skill-tag text-xs px-3 py-1">C++</span>
+              <span class="skill-tag text-xs px-3 py-1">Tailwind_CSS</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] text-gray-500 block mb-4 tracking-widest uppercase">CREATIVE_STACK:</span>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag text-xs px-3 py-1">Adobe_Suite</span>
+              <span class="skill-tag text-xs px-3 py-1">UI/UX_Design</span>
+              <span class="skill-tag text-xs px-3 py-1">Typography</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-12 border-t border-terminal-dim text-center">
+    <p class="text-[10px] text-terminal-dim tracking-widest uppercase font-mono">
+      Encoded by Tawaf © 2026
+    </p>
+  </footer>
+
+  <script>
+    // Matrix Rain Engine
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 35);
+    window.addEventListener('resize', () => { 
+      canvas.width = window.innerWidth; 
+      canvas.height = window.innerHeight; 
+    });
+  </script>
+</body>
+</html>
