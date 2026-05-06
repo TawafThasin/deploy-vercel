@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSU.CSE // About_Prakash</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'terminal-green': '#00FF41',
+            'terminal-dim': '#003B00',
+            'void-black': '#050505',
+            'hacker-white': '#F0F0F0',
+          },
+          fontFamily: {
+            mono: ['"Fira Code"', 'monospace'],
+            sans: ['"Jost"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #050505; color: #F0F0F0; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+    
+    #matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
+
+    body::after {
+      content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 9999; background-size: 100% 2px, 3px 100%; pointer-events: none;
+    }
+
+    .skill-tag { font-size: 0.65rem; border: 1px solid #003B00; padding: 0.2rem 0.6rem; color: #00FF41; background: rgba(0, 59, 0, 0.1); }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav class="w-full z-50 bg-void-black/80 border-b border-terminal-dim backdrop-blur-md px-8 h-16 flex items-center justify-between">
+      <div class="text-terminal-green font-bold tracking-tighter">
+        [TAWAF@NSU_CSE:~]$ <span class="animate-pulse">_</span>
+      </div>
+      <a href="index.html" class="text-[10px] text-terminal-green hover:text-white transition-colors tracking-widest uppercase font-mono">
+        << RETURN_TO_ROOT
+      </a>
+  </nav>
+
+  <!-- PROFESSIONAL PROFILE -->
+  <section class="flex-grow py-24 px-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-terminal-green mb-12 text-xs tracking-widest uppercase font-mono">> DECRYPTING_BIOGRAPHY...</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Biography Column -->
+        <div class="space-y-6">
+          <h3 class="text-4xl font-serif italic text-hacker-white">Engineering Logic. <span class="text-terminal-green">Designing Impact.</span></h3>
+          <p class="text-sm leading-relaxed text-gray-400">
+            I am a **Computer Science & Engineering** student at **North South University**. My work exists at the intersection of technical architecture and visual storytelling.
+          </p>
+          <p class="text-sm leading-relaxed text-gray-400">
+            As a **Graphics Designer**, I translate complex ideas into minimalist visual identities. Simultaneously, my background in **volunteering** drives me to apply these skills toward solving community challenges and creating social value.
+          </p>
+          <div class="bg-terminal-dim/20 border-l-2 border-terminal-green p-4 mt-6">
+            <p class="text-xs font-mono text-terminal-green italic">"Chaos is just patterns we haven't decrypted yet."</p>
+          </div>
+        </div>
+
+        <!-- System Specs Column -->
+        <div class="bg-void-black/90 border border-terminal-dim p-6 shadow-2xl backdrop-blur-sm">
+          <div class="flex items-center gap-2 mb-6 border-b border-terminal-dim pb-2 text-gray-500 font-mono text-[10px]">
+             system_specs.sh
+          </div>
+          
+          <ul class="space-y-4 font-mono text-xs">
+            <li class="flex justify-between border-b border-terminal-dim/30 pb-2">
+              <span class="text-gray-500">Academic_Institute:</span>
+              <span class="text-terminal-green">North_South_University</span>
+            </li>
+            <li class="flex justify-between border-b border-terminal-dim/30 pb-2">
+              <span class="text-gray-500">Core_Focus:</span>
+              <span class="text-terminal-green">CSE_&_Visual_Systems</span>
+            </li>
+            <li class="flex justify-between border-b border-terminal-dim/30 pb-2">
+              <span class="text-gray-500">Professional_Roles:</span>
+              <span class="text-terminal-green">Designer_&_Volunteer</span>
+            </li>
+            
+            <li class="pt-4">
+              <span class="text-[10px] text-gray-500 block mb-3">TECHNICAL_STACK:</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Tailwind_CSS</span>
+              </div>
+            </li>
+
+            <li class="pt-4">
+              <span class="text-[10px] text-gray-500 block mb-3">CREATIVE_STACK:</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Adobe_Suite</span>
+                <span class="skill-tag">UI/UX_Design</span>
+                <span class="skill-tag">Typography</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 border-t border-terminal-dim text-center">
+    <p class="text-[10px] text-terminal-dim tracking-widest uppercase font-mono">
+      Encoded by Tawaf © 2026
+    </p>
+  </footer>
+
+  <script>
+    // Matrix Rain Engine
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 35);
+    window.addEventListener('resize', () => { 
+      canvas.width = window.innerWidth; 
+      canvas.height = window.innerHeight; 
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tawaf Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'terminal-green': '#00FF41',
+          'terminal-dim': '#003B00',
+          'void-black': '#050505',
+          'hacker-white': '#F0F0F0',
+        },
+        fontFamily: {
+          mono: ['"Fira Code"', 'monospace'],
+          sans: ['"Jost"', 'sans-serif'],
+          serif: ['"Cormorant Garamond"', 'serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background-color: #050505;
+    color: #F0F0F0;
+    font-family: 'Fira Code', monospace;
+    overflow-x: hidden;
+  }
+   
+  .font-mono {
+  font-family: 'Fira Code', monospace;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+  opacity: 0.9;
+  }
+   
+  /* Matrix Rain Canvas */
+  #matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15; /* Subtle enough to not distract from content */
+  }
+
+  /* CRT Scanline Effect */
+  body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #00FF41;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+  .nav-link:hover { color: #FFF; text-shadow: 0 0 10px #FFF; }
+
+  .project-card {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #003B00;
+    transition: all 0.3s ease;
+  }
+  .project-card:hover {
+    border-color: #00FF41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn-hacker {
+    border: 1px solid #00FF41;
+    color: #00FF41;
+    padding: 0.75rem 2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.3s;
+    background: transparent;
+  }
+  .btn-hacker:hover {
+    background: #00FF41;
+    color: #050505;
+    box-shadow: 0 0 20px #00FF41;
+  }
+
+  .skill-tag {
+    font-size: 0.6rem;
+    border: 1px solid #003B00;
+    padding: 0.2rem 0.6rem;
+    color: #00FF41;
+  }
+
+  /* Glitch Animation for Hero */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+  .glitch-hover:hover { animation: glitch 0.3s infinite; }
+</style>
+</head>
+
+<body>
+<canvas id="matrix-bg"></canvas>
+
+<!-- NAVIGATION -->
+<nav class="fixed top-0 w-full z-50 bg-void-black/80 border-b border-terminal-dim backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+    <div class="text-terminal-green font-bold tracking-tighter">
+      [TAWAF@NSU_CSE:~]$ <span class="animate-pulse">_</span>
+    </div>
+    <div class="hidden md:flex gap-8">
+      <a href="#hero" class="nav-link">./home</a>
+      <a href="about.html" class="nav-link">./about</a>
+      <a href="#projects" class="nav-link">./projects</a>
+      <a href="contact.html" class="nav-link">./contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="min-h-screen flex flex-col justify-center px-8">
+  <div class="max-w-6xl mx-auto w-full">
+    <p class="text-terminal-green text-xs mb-4 opacity-70">>> SYSTEM_LOAD_COMPLETE: 100%</p>
+<!-- Updated Motto with Code Styling -->
+   <h1 class="text-4xl md:text-6xl font-sans mb-6">
+     <span class="font-mono text-terminal-green text-lg md:text-xl block mb-2 break-all md:break-normal">
+     system.execute(Bridging_the_Latency_between_Visual_Logic_and_Human_Impact.);
+     </span>
+   </h1>
+    <p class="max-w-xl text-muted-foreground text-sm leading-relaxed mb-10 opacity-80">
+      Undergraduate at North South University. Specializing in secure systems, 
+      algorithmic efficiency and minimalist interface design.
+      Current status: <span class="bg-terminal-dim text-terminal-green px-2">ROOT_ACCESS_GRANTED</span>
+    </p>
+    <div class="flex gap-6">
+      <button class="btn-hacker">Initiate.View_Work</button>
+      <!-- Change your button to this -->
+      <button onclick="location.href='contact.html'" class="btn-hacker" style="border-color: #F0F0F0; color: #F0F0F0;">
+       Decrypt.Contact</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (SYSTEM_REPOS) -->
+<section id="projects" class="py-24 bg-black/40">
+  <div class="max-w-6xl mx-auto px-8">
+    <h2 class="text-terminal-green mb-12 text-xs tracking-widest uppercase font-mono">// STORAGE_REPOSITORIES</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="project-card p-6">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-[10px] text-terminal-green font-mono">ID: 0x442</span>
+          <span class="text-terminal-dim">● ● ●</span>
+        </div>
+        <h3 class="text-xl mb-3">Urban_Waste_Analysis</h3>
+        <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+          Case study on plastic waste lifecycle in Dhaka. Mapping gaps and policy frameworks.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="skill-tag">Research</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card p-6">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-[10px] text-terminal-green font-mono">ID: 0x91A</span>
+          <span class="text-terminal-dim">● ● ●</span>
+        </div>
+        <h3 class="text-xl mb-3">Kernel_Snake_Ludo</h3>
+        <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+          Browser-based logic engine using Vanilla JS and clean grid architecture.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">UI_Dev</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-terminal-dim text-center">
+  <p class="text-[10px] text-terminal-dim tracking-widest uppercase">
+    Encoded by Tawaf © 2026 // No rights reserved, just code.
+  </p>
+</footer>
+
+<script>
+  // Matrix Rain Effect
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#00FF41';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = characters.charAt(Math.floor(Math.random() * characters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 35);
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
